@@ -14,3 +14,16 @@ upper = Q3 + 1.5 * IQR
 outliers = df[(df['Marks'] < lower) | (df['Marks'] > upper)]
 
 print(outliers)
+
+
+TN, FP, FN, TP = cm.ravel()
+
+accuracy = (TP + TN) / (TP + TN + FP + FN)
+error_rate = (FP + FN) / (TP + TN + FP + FN)
+precision = TP / (TP + FP)
+recall = TP / (TP + FN)
+
+print("Accuracy:", accuracy)
+print("Error Rate:", error_rate)
+print("Precision:", precision)
+print("Recall:", recall)
